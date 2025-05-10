@@ -3,7 +3,7 @@ const  {getAllContacts, getContact} = require("../controller/contact")
 const router = express.Router()
 const { ObjectId } = require("mongodb")
 
-router.get("/getAll", async (req, res)=>{
+router.get("/contacts", async (req, res)=>{
     try{
         const response = await getAllContacts();
     console.log(response)
@@ -38,7 +38,7 @@ router.get("/", (req, res) => {
 // '681e8fdf41ec986c6cfbaa52' // Katlego Peters
 
 
-router.get("/get/:id", async(req, res) => {
+router.get("/contacts/:id", async(req, res) => {
     try{
         const id = req.params.id
     const object_id = new ObjectId(id)
