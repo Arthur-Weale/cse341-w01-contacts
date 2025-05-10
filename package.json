@@ -1,0 +1,25 @@
+{
+  "name": "cse341-w01-contacts",
+  "version": "1.0.0",
+  "description": "This is for my web services class W01 Project: Contacts",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Arthur-Weale/cse341-w01-contacts.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Arthur-Weale/cse341-w01-contacts/issues"
+  },
+  "homepage": "https://github.com/Arthur-Weale/cse341-w01-contacts#readme",
+  "dependencies": {
+    "dotenv": "^16.5.0",
+    "express": "^5.1.0",
+    "mongodb": "^6.16.0"
+  }
+}
