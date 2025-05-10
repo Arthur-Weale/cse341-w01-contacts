@@ -1,0 +1,30 @@
+{
+"version": "0.2.0",
+"configurations": [
+    
+    {
+    "type": "node",
+    "request": "launch",
+    "name": "Run Current File",
+    "skipFiles": ["<node_internals>/**"],
+    "program": "${file}"
+    },
+    {
+    "type": "node",
+    "request": "launch",
+    "name": "Run Main App File",
+    "skipFiles": ["<node_internals>/**"],
+    "program": "${workspaceFolder}/app.js"
+    },
+    {
+    "type": "node",
+    "request": "launch",
+    "name": "Run with Env Variables",
+    "program": "${workspaceFolder}/server.js",
+    "env": {
+        "PORT": "3000",
+        "NODE_ENV": "development"
+    }
+    }
+]
+}
