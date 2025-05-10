@@ -18,7 +18,7 @@ router.get("/contacts", async (req, res)=>{
 router.get("/", (req, res) => {
     res.json({
         message: "🧪 Sample ObjectIds for testing. Paste one of these IDs into the URL like /contacts/:id to fetch a specific contact.",
-        example: "http://localhost:3000/getOne/681e8f8941ec986c6cfbaa4b",
+        example: "http://localhost:3000/contacts/681e8f8941ec986c6cfbaa4b",
         sampleIds: [
             { _id: "681e8f8941ec986c6cfbaa4b", name: "Liam Moyo" },
             { _id: "681e8f9f41ec986c6cfbaa4c", name: "Amahle Nkosi" },
