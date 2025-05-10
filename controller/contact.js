@@ -1,7 +1,7 @@
 const {initdb} = require("../model/connectdb")
 
 
-const getData = async () => {
+const getAllContacts = async () => {
     try{
         const client = await initdb();
         const result = await client.db("contactDB").collection("contacts").find().toArray();
@@ -14,6 +14,4 @@ const getData = async () => {
     }
 }
 
-getData()
-
-module.exports = {getData};
+module.exports = {getAllContacts};
