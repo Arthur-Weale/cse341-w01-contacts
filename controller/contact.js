@@ -16,10 +16,10 @@ const getAllContacts = async () => {
     }
 }
 
-const getContact = async () => {
+const getContact = async (requestedId) => {
     try{
         const client = await initdb()
-        const result = await client.db("contactDB").collection("contacts").findOne({"_id":  new ObjectId("681e8f9f41ec986c6cfbaa4c")})
+        const result = await client.db("contactDB").collection("contacts").findOne({"_id":  requestedId})
         console.log(result)
         return result
     }catch(err){
