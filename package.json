@@ -2,9 +2,9 @@
   "name": "cse341-w01-contacts",
   "version": "1.0.0",
   "description": "This is for my web services class W01 Project: Contacts",
-  "main": "index.js",
+  "main": "server.js",
   "scripts": {
-    "start": "node server.js",
+    "start": "node serve.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
