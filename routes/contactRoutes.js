@@ -15,6 +15,14 @@ router.get("/getAll", async (req, res)=>{
     
 })
 
+// 🧪 Sample ObjectIds for testing:
+// '681e8f8941ec986c6cfbaa4b' // Liam Moyo
+// '681e8f9f41ec986c6cfbaa4c' // Amahle Nkosi
+// '681e8fb641ec986c6cfbaa4d' // Thabo Dlamini
+// '681e8fcd41ec986c6cfbaa51' // Zanele Khumalo
+// '681e8fdf41ec986c6cfbaa52' // Katlego Peters
+
+
 router.get("/get", async(req, res) => {
     try{
         const id = "681e8fdf41ec986c6cfbaa52"
