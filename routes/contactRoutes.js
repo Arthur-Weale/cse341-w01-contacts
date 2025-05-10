@@ -1,9 +1,9 @@
 const express = require("express")
-const  {getData} = require("../controller/contact")
+const  {getAllContacts} = require("../controller/contact")
 const router = express.Router()
 
 router.get("/getAll", async (req, res)=>{
-    const response = await getData();
+    const response = await getAllContacts();
     console.log(response)
     res.status(200).json(response)
 })
