@@ -4,7 +4,7 @@
   "description": "This is for my web services class W01 Project: Contacts",
   "main": "server.js",
   "scripts": {
-    "start": "node serve.js",
+    "start": "node server.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -19,6 +19,7 @@
   },
   "homepage": "https://github.com/Arthur-Weale/cse341-w01-contacts#readme",
   "dependencies": {
+    "body-parser": "^2.2.0",
     "dotenv": "^16.5.0",
     "express": "^5.1.0",
     "mongodb": "^6.16.0"

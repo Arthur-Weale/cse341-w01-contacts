@@ -12,7 +12,7 @@ const initdb = async ()=>{
     console.log("MongoDB client initialized");
 
     await client.connect();
-    console.log("Database handshake establishes")
+    console.log("Database handshake established")
 
     cachedClient = client;
     return client;

@@ -1,5 +1,5 @@
 const express = require("express")
-const  {getAllContacts, getContact} = require("../controller/contact")
+const  {getAllContacts, getContact, createContact, updateContact, deleteContact} = require("../controller/contact")
 const router = express.Router()
 const { ObjectId } = require("mongodb")
 
@@ -41,14 +41,76 @@ router.get("/", (req, res) => {
 router.get("/contacts/:id", async(req, res) => {
     try{
         const id = req.params.id
-    const object_id = new ObjectId(id)
-    const response = await getContact(object_id)
-    res.status(200).json(response)
+        const object_id = new ObjectId(id)
+        const response = await getContact(object_id)
+        res.status(200).json(response)
         console.log("Contact Request successful")
     }catch(err){
         console.log("Contact request failed", err.message)
     }
     
+})
+
+router.post("/create-contact",async(req, res)=>{
+    try{
+        const user = {
+            firstName: req.body.firstName,
+            lastName: req.body.lastName,
+            email: req.body.email,
+            favoriteColor: req.body.favoriteColor,
+            birthday: req.body.birthday
+        }
+        const response = await createContact(user);
+        if(response){
+            res.status(201).json({message: "Contact created successfully", id: response.toString() });
+        }else{
+            res.status(500).json(response.error || "Some error occured while updating the user");
+        }
+    }catch(err){
+        console.log("Error occured", err.message)
+        res.status(500).json({ error: "Server error: " + err.message });
+    }
+})
+
+router.put("/contacts/:id", async (req, res)=>{
+    try{
+        const userId = req.params.id
+        const userId_o = new ObjectId(userId);
+        const user = {
+            firstName: req.body.firstName,
+            lastName: req.body.lastName,
+            email: req.body.email,
+            favoriteColor: req.body.favoriteColor,
+            birthday: req.body.birthday
+        }
+
+        const response = await updateContact(userId_o, user);
+        console.log(response);
+        if(response.modifiedCount > 0){
+            res.status(200).json({message: "Contact updated succesfully"})
+        }else{
+            res.status(500).json(response.error || "Some error occured while updating the user")
+        }
+    }catch(err){
+        console.log("Error occured", err.message)
+        res.status(500).json({ error: "Server error: " + err.message })
+    }
+})
+
+
+router.delete("/delete/:id", async (req, res)=> {
+    try{
+        const userId = req.params.id
+        const userId_o = new ObjectId(userId)
+        const response = await deleteContact(userId_o);
+        if(response.deletedCount > 0){
+            res.status(200).json({message: "Contact was deleted succefully"})
+        }else{
+            res.status(500).json({message: "Something went wrong, contact deletion was not a success"})
+        }
+    }catch(err){
+        res.status(500).json({Error: "The was a problem" + err.message})
+        }
 })
 
 
