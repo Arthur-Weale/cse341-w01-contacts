@@ -1,0 +1,49 @@
+
+#Gets all contact in the database
+GET http://localhost:3000/contacts
+
+
+###
+
+
+#Retrieves a particular contact by contact ID
+GET https://contacts-api-bqy6.onrender.com/contacts/681e8fdf41ec986c6cfbaa52
+
+
+###
+
+
+#Creates contact
+POST http://localhost:3000/create-contact
+Content-Type: application/json
+
+{
+  "firstName": "Nomsa",
+  "lastName": "Mthembu",
+  "email": "nomsa.m@example.com",
+  "favoriteColor": "Lavender",
+  "birthday": "2001-12-17"
+}
+
+
+###
+
+
+#Updates a contact
+PUT http://localhost:3000/update-contact/682917167e407a1c2b2e5bbd
+Content-Type: application/json
+
+{
+    "firstName": "Amahle",
+    "lastName": "Dlamini",
+    "email": "amahle.dlaminit@example.com",
+    "favoriteColor": "Purple",
+    "birthday": "1998-11-22"
+  }
+
+
+###
+
+
+#This deletes a contact based on id
+DELETE http://localhost:3000/delete/682925e83d9581ce7f7c065c
