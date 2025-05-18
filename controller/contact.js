@@ -4,6 +4,7 @@ const {initdb} = require("../model/connectdb")
 
 
 const getAllContacts = async () => {
+    //#swagger.tags=["Users"]
     try{
         const client = await initdb();
         const result = await client.db("contactDB").collection("contacts").find().toArray();
@@ -17,6 +18,7 @@ const getAllContacts = async () => {
 }
 
 const getContact = async (requestedId) => {
+    //#swagger.tags=["Users"]
     try{
         const client = await initdb()
         const result = await client.db("contactDB").collection("contacts").findOne({"_id":  requestedId})
@@ -29,6 +31,7 @@ const getContact = async (requestedId) => {
 }
 
 const createContact = async (createdUser)=>{
+    //#swagger.tags=["Users"]
     try{
         console.log("Creating User")
         const client = await initdb()
@@ -44,6 +47,7 @@ const createContact = async (createdUser)=>{
 }
 
 const updateContact = async (userIdUpdate,contactUpdate)=>{
+    //#swagger.tags=["Users"]
     try{
         
         const client = await initdb();
@@ -60,6 +64,7 @@ const updateContact = async (userIdUpdate,contactUpdate)=>{
 
 
 const deleteContact = async (removeContact)=>{
+    //#swagger.tags=["Users"]
     try{
         console.log("initialising client")
         const client = await initdb()

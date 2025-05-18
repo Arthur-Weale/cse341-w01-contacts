@@ -3,6 +3,15 @@ const  {getAllContacts, getContact, createContact, updateContact, deleteContact}
 const router = express.Router()
 const { ObjectId } = require("mongodb")
 
+
+router.use("/", require("./swagger"))
+
+//TEST
+router.get("/", (req, res) => {
+    //#swagger.tags=["Hello Arthur"]
+    res.send("Hello Arthur")
+} )
+
 router.get("/contacts", async (req, res)=>{
     try{
         const response = await getAllContacts();
